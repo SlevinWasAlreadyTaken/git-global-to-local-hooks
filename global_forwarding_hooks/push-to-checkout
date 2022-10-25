@@ -1,0 +1,9 @@
+#!/bin/bash
+
+run_local_hook () {
+    ~/.git-global-hooks/run-local-hook push-to-checkout
+}
+
+# implement your global hook below and call run_local_hook instead of "exit 0"
+
+run_local_hook
