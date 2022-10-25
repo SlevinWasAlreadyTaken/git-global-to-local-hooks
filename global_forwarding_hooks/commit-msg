@@ -1,7 +1,7 @@
 #!/bin/bash
 
 run_local_hook () {
-    ~/.git-global-hooks/run-local-hook commit-msg
+    $HOME/.git-global-hooks/run-local-hook commit-msg
 }
 
 # implement your global hook below and call run_local_hook instead of "exit 0"

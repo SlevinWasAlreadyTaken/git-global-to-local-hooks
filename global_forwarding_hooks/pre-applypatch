@@ -1,7 +1,7 @@
 #!/bin/bash
 
 run_local_hook () {
-    ~/.git-global-hooks/run-local-hook pre-applypatch
+    $HOME/.git-global-hooks/run-local-hook pre-applypatch
 }
 
 # implement your global hook below and call run_local_hook instead of "exit 0"
