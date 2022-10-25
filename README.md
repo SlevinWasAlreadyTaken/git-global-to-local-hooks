@@ -5,7 +5,7 @@ This repository allows you to use global hooks without overriding local ones.
 ### How?
 
 1. It uses the classic `global hooks` strategy by setting a global git configuration to change the place git will look for hooks.
-2. In installs `forwarding global hooks` that will by default just trigger `project local hooks` considering the project you run a git command on (using `git rev-parse`).
+2. It installs `forwarding global hooks` that will by default just trigger `project local hooks` considering the project you run a git command on (using `git rev-parse`).
 3. It installs a forwarding global hook for all existing kind of hooks: see [the documentation](https://git-scm.com/docs/githooks):
     - applypatch-msg
     - commit-msg
