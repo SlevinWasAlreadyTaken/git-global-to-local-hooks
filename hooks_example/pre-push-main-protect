@@ -1,0 +1,21 @@
+#!/bin/bash
+
+run_local_hook () {
+    $HOME/.git-global-hooks/run-local-hook pre-push
+}
+
+# implement your global hook below and call run_local_hook instead of "exit 0"
+
+current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+
+echo "Running global pre-push... $current_branch"
+if [ $current_branch = 'main' ] || [ $current_branch = 'master' ]; then
+    read -p "This is the main branch, do you really to push? [y|n] " -n 1 -r < /dev/tty
+    echo
+    if echo $REPLY | grep -E '^[Yy]$' > /dev/null; then
+        run_local_hook
+    fi
+    exit 1
+fi
+
+run_local_hook
