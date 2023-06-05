@@ -14,6 +14,7 @@ if [ $current_branch = 'main' ] || [ $current_branch = 'master' ]; then
     echo
     if echo $REPLY | grep -E '^[Yy]$' > /dev/null; then
         run_local_hook
+	exit 0
     fi
     exit 1
 fi
